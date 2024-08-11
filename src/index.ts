@@ -1,9 +1,9 @@
 import express from 'express'
 import logRouter from './routers/log-router';
 
-const PORT = process.env.PORT;
+const PORT = process.env.NODEJS_PORT;
 
-const HOSTNAME = process.env.HOSTNAME;
+const HOSTNAME = process.env.NODEJS_HOSTNAME;
 
 const app = express();
 
