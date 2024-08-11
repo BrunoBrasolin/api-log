@@ -1,11 +1,14 @@
-import * as oracledb from 'oracledb';
+import { Knex } from "knex";
 
 export default async function getDatabaseConnection() {
-  const connection = await oracledb.getConnection({
-    user: "",
-    password: "",
-    connectString: ``
-  });
+  const knex: Knex  = require('knex')({
+    client: 'oracledb',
+    connection: {
+      user: "",
+      password: "",
+      connectString: `(`
+    }
+  })
 
-  return connection;
+  return knex;
 }

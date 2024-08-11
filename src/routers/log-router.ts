@@ -5,7 +5,7 @@ const logRouter = express.Router();
 
 logRouter.get('/', async (req, res) => {
 
-  const list = logsRepository.list();
+  const list = await logsRepository.list();
 
   res.json(list);
 });

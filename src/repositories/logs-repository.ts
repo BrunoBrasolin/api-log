@@ -2,21 +2,13 @@ import Log from "../models/log";
 import getDatabaseConnection from "./database";
 
 const logsRepository = {
-  list: async () => {
+  list: async (): Promise<Log[]> => {
 
-    let connection = null;
+    let connection = await getDatabaseConnection();
 
-    try {
-      connection = await getDatabaseConnection();
+    const logs: Log[] = await connection.select('*').orderBy('Id', 'desc').from<Log>('LOG');
 
-      const result = await connection.execute("SELECT * FROM LOG ORDER BY 1 DESC");
-
-      return result.rows as Log[];
-
-    } finally {
-      if (connection != null)
-        await connection.close();
-    }
+    return logs;
   }
 }
 

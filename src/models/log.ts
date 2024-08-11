@@ -1,4 +1,4 @@
-type Log = {
+interface Log {
   Id: number;
   Message?: string | null;
   MessageTemplate?: string | null;
