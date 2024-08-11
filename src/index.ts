@@ -1,3 +1,5 @@
+require('dotenv').config({ path: '/app/config/.env' });
+
 import express from 'express'
 import logRouter from './routers/log-router';
 
@@ -5,7 +7,6 @@ const PORT = process.env.NODEJS_PORT;
 
 const HOSTNAME = process.env.NODEJS_HOSTNAME;
 
-require('dotenv').config({ path: '/app/config/.env' });
 
 const app = express();
 
