@@ -5,6 +5,8 @@ const PORT = process.env.NODEJS_PORT;
 
 const HOSTNAME = process.env.NODEJS_HOSTNAME;
 
+require('dotenv').config({ path: '/app/config/.env' });
+
 const app = express();
 
 app.use(express.json());
