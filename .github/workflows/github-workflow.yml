@@ -13,7 +13,7 @@ jobs:
   CI:
     uses: BrunoBrasolin/workflow-template/.github/workflows/nodejs-docker-ci.yml@main
     with:
-      applicationName: api-log
+      applicationName: api-logs
     secrets: inherit
 
   CD:
@@ -21,6 +21,6 @@ jobs:
     uses: BrunoBrasolin/workflow-template/.github/workflows/nodejs-docker-cd.yml@main
     with:
       dockerAccount: brunobrasolin
-      applicationName: api-log
+      applicationName: api-logs
       port: 84
     secrets: inherit
