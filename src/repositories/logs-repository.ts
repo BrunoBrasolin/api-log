@@ -6,7 +6,10 @@ const logsRepository = {
 
     let connection = await getDatabaseConnection();
 
-    const logs: Log[] = await connection.select('*').orderBy('Id', 'desc').from<Log>('LOG');
+    const logs: Log[] = await connection.select('*')
+                                        .orderBy('Id', 'desc')
+                                        .from<Log>('LOG')
+                                        .limit(100);
 
     return logs;
   }
